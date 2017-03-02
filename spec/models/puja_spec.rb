@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Puja, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "orders by   name" do
+    onetest = Puja.create!(name: "one", description: "one description", benefit: "one benefit", suggested_offering: "56")
+    twotest = Puja.create!(name: "two", description: "two description", benefit: "two benefit", suggested_offering: "96")
+
+    expect(Puja.order(:name)).to eq([onetest, twotest])
+  end
 end
