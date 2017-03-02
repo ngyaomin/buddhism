@@ -8,4 +8,7 @@ RSpec.describe Puja, type: :model do
 
     expect(Puja.order(:name)).to eq([onetest, twotest])
   end
+
+
+
 end
