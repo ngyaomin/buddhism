@@ -1,22 +1,13 @@
-class PujasController < ApplicationController
-  def puja_action
-    Puja.create(:name => "pujatest",
-                :description => "pujadescription",
-                :benefit => "pujabenefit",
-                :suggested_offering => "100")
-  end
+require "./test/test_helper"
 
-  require 'rails_helper'
+describe PujasController do
 
-  RSpec.describe PujasController, type: :controller do
-    describe "#puja_action" do
-     it "creates a puja" do
-       expect {
-         get :puja_action
-       }.to change(Puja, :count).by(1)
-     end
-   end
+  describe 'GET #index' do
+    get :index
   end
+  it { is_expected.to render_with_layout :new}
+  it { is_expected.to render_template :index }
+
 
 
 end
