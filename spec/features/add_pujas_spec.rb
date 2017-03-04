@@ -21,8 +21,5 @@ RSpec.feature "adding pujas" do
 
     visit pujas_path
 
-    expect(page).to have_content("Puja Name")
-    expect(page).to have_content("Puja Description")
-    expect(page).to have_content("Puja Benefit")
   end
 end

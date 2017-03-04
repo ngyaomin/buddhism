@@ -3,6 +3,10 @@ class PujasController < ApplicationController
     @puja = Puja.new
   end
 
+  def show
+  @puja = Puja.find(params[:id])
+  end
+  
   def index
     @pujas = Puja.all
   end
