@@ -1,10 +1,19 @@
-# factory :contact do |f|
-#   f.name { Faker::Puja.name }
-#   f.description { Faker::Puja.description }
-#   f.benefit { Faker::Puja.benefit }
-#   f.suggested_offering { Faker::Puja.suggested_offering }
-# end
+FactoryGirl.define do
+  factory :puja do |f|
+    f.name "Pujaname"
+    f.description "Pujadescription"
+    f.benefit "Pujabenefit"
+    f.suggested_offering "100"
+  end
+end
+
+# require 'faker'
 #
-# factory :invalid_puja, parent: :puja do |f|
-#   f.name nil
+# FactoryGirl.define do
+#   factory :puja do |f|
+#     f.name { Faker::Superhero.name }
+#     f.description { Faker::Superhero.descriptor }
+#     f.benefit {Faker::Superhero.prefix}
+#     f.suggested_offering {Faker::Superhero.power}
+#   end
 # end
