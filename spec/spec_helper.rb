@@ -98,4 +98,5 @@ RSpec.configure do |config|
 =end
 require "capybara/rspec"
 require 'factory_girl_rails'
+      
 end

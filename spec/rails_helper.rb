@@ -73,4 +73,6 @@ RSpec.configure do |config|
   #   end
   # end
 
+  config.include FactoryGirl::Syntax::Methods
+
 end
