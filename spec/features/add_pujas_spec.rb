@@ -19,5 +19,11 @@ RSpec.feature "adding pujas" do
     expect(page).to have_content("Puja Benefit")
     # expect(page).to have_content 100
 
+    visit pujas_path
+
+    expect(page).to have_content("Puja Name")
+    expect(page).to have_content("Puja Description")
+    expect(page).to have_content("Puja Benefit")
+
   end
 end
