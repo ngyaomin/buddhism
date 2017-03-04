@@ -11,7 +11,7 @@ RSpec.feature "adding pujas" do
     fill_in "Benefit" , with: "Puja Benefit"
     # fill_in "suggested_offering", with: "100"
 
-    click_on("Create Puja")
+    click_on("Save Puja")
 
 
     expect(page).to have_content("Puja Name")
