@@ -1,6 +1,6 @@
 class PujasController < ApplicationController
   def new
-    @post = Post.new
+    @puja = Puja.new
   end
 
   def index
