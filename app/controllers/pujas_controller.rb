@@ -6,10 +6,8 @@ class PujasController < ApplicationController
   def show
   @puja = Puja.find(params[:id])
   end
+
   
-  def index
-    @pujas = Puja.all
-  end
 
   def create
     @puja = Puja.new(puja_params)
