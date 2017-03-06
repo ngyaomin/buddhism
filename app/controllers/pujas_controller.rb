@@ -15,6 +15,13 @@ class PujasController < ApplicationController
     redirect_to @puja
   end
 
+  def destroy
+    @puja = Puja.find(params[:id])
+    @puja.destroy
+
+    redirect_to pujas_path
+  end
+
   private
     def puja_params
       params.require(:puja).permit(:name, :description, :benefit, :suggested_offering)
