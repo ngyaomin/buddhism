@@ -20,4 +20,15 @@ class PujasControllerTest < ActionDispatch::IntegrationTest
         delete puja_url(puja)
       end
     end
+
+  test "can update a puja" do
+    puja = pujas(:one)
+    patch puja_url(puja), params: { puja: { name: 'Puja Name', description: 'Puja description', benefit: 'puja benefit', suggested_offering: 'Puja Benefit' } }
+
+    assert_redirected_to pujas_url
+    puja.reload
+    assert_equal "updated", puja.name
+  end
+
+
 end
