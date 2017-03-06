@@ -1,4 +1,7 @@
 class PujasController < ApplicationController
+  def index
+   @pujas = Puja.all
+ end
   def new
 
   end
