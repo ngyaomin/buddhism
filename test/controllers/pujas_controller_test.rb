@@ -8,5 +8,10 @@ class PujasControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "can show a puja" do
+    puja = pujas(:one)
+    get puja_url(puja)
+    assert_response :success
+  end
 
 end
