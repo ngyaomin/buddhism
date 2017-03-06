@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe PujasController do
   describe "GET #index" do
     it "populates an array of pujas" do

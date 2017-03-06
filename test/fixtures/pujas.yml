@@ -1,0 +1,8 @@
+one:
+  name: MyPuja
+  description: MyDescription
+  benefit: MyBenefit
+  suggested_offering: Myoffering
+
+two:
+  name: MyString
