@@ -23,11 +23,14 @@ class PujasControllerTest < ActionDispatch::IntegrationTest
 
   test "can update a puja" do
     puja = pujas(:one)
-    patch puja_url(puja), params: { puja: { name: 'Puja Name', description: 'Puja description', benefit: 'puja benefit', suggested_offering: 'Puja Benefit' } }
+    patch puja_url(puja), params: { puja: { name: 'Puja Name', description: 'Puja Description', benefit: 'Puja Benefit', suggested_offering: 100 } }
 
     assert_redirected_to pujas_url
     puja.reload
-    assert_equal "updated", puja.name
+    assert_equal "Puja Name", puja.name
+    assert_equal "Puja Description", puja.description
+    assert_equal "Puja Benefit", puja.benefit
+    assert_equal 100, puja.suggested_offering
   end
 
 
