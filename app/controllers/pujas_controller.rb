@@ -4,7 +4,7 @@ class PujasController < ApplicationController
   end
 
   def show
-
+    @puja = Puja.find(params[:id])
   end
 
 
