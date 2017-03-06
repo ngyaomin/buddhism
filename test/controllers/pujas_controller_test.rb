@@ -14,4 +14,10 @@ class PujasControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "can delete a puja" do
+      puja = pujas(:one)
+      assert_difference('Puja.count', -1) do
+        delete puja_url(puja)
+      end
+    end
 end
