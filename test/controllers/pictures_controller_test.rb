@@ -21,4 +21,16 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
       end
     end
 
+    test "can update a picture" do
+      picture = pictures(:one)
+      patch picture_url(picture), params: { picture: { title: 'Picture Title', description: 'Picture Description', picture_image: 'this string will be an url' } }
+
+      assert_redirected_to pictures_url
+      picture.reload
+      assert_equal "Picture Title", picture.title
+      assert_equal "Picture Description", picture.description
+      assert_equal "this string will be an url", picture.picture_image
+    end
+
+
 end
