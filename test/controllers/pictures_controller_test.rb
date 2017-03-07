@@ -8,10 +8,17 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "can show a puja" do
+  test "can show a picture" do
     picture = pictures(:one)
     get picture_url(picture)
     assert_response :success
   end
+
+  test "can delete a picture" do
+      picture = pictures(:one)
+      assert_difference('Picture.count', -1) do
+        delete picture_url(picture)
+      end
+    end
 
 end
