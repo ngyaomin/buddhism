@@ -1,5 +1,13 @@
 class PicturesController < ApplicationController
 
+  def index
+   @pictures = Picture.all.order("created_at DESC")
+  end
+
+  def show
+   @picture = Picture.find(params[:id])
+ end
+
   def create
     @picture = Picture.new(picture_params)
 

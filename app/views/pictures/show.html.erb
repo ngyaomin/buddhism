@@ -1,0 +1,17 @@
+<h1> Picture </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @picture.description %>
+</p>
+
+<p>
+  <%= image_tag @picture.picture_image.url %>
+</p>
+
+<%= link_to 'Back', pictures_path %>
