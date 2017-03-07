@@ -9,4 +9,5 @@ RSpec.describe PicturesController, type: :controller do
     end
   end
 
+
 end
