@@ -1,12 +1,16 @@
 <h1> listing of pujas available </h1>
-
+<p> Pujas are religious ceromonies for invoking blessings
+  for particular reasons </p>
 <% @pujas.each do |puja| %>
 
     <p>Name: <%= puja.name %> </p>
     <p>Descriptions:<br> <%= puja.description.truncate_words(25) %> </p>
     <p>Benefit:<br> <%= puja.benefit.truncate_words(25) %> </p>
     <p>Suggested_offering: <%= puja.suggested_offering %> </p>
-
-     <br>
+    <%= link_to 'Show', puja_path(puja) %>
+    <%= link_to 'Edit', edit_puja_path(puja) %>
+    <%= link_to 'Destroy', puja_path(puja),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
 
 <% end %>
