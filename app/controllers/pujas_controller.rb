@@ -28,6 +28,10 @@ class PujasController < ApplicationController
     end
   end
 
+  def edit
+  @puja = Puja.find(params[:id])
+end
+
   def destroy
     @puja = Puja.find(params[:id])
     @puja.destroy
