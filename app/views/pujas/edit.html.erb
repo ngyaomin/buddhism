@@ -2,7 +2,7 @@
 
 
 
-<%= form_for :puja, url: pujas_path do |f| %>
+<%= form_for :puja, url: puja_path(@puja), method: :patch do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
