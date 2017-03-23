@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'carrierwave'
 gem 'devise', '~> 4.2'
+gem 'omniauth-facebook'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

@@ -15,7 +15,7 @@
 
   <p>
     <%= f.label :picture_image %>
-    <%= f.file_field :picture_image %>
+    <%= f.file_field :image, title: "Please choose file", class: "file-picker" %>
   </p>
 
   <p>
@@ -25,3 +25,16 @@
 <% end %>
 
 <%= link_to 'Back', pictures_path %>
+
+<script>
+    displayFile = (object) ->
+      file = object.value.split("\\")
+      filename = file[file.length-1]
+      $("#file-name").text(filename)
+
+    $("#file-btn").on "click", ->
+      $("#file-picker").click()
+
+    $("#file-picker").on "change", ->
+      displayFile(this)
+  </script>
